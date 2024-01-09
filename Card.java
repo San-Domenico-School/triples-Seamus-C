@@ -55,11 +55,19 @@ public class Card extends Actor
     {
         return shading;
     }
-    public boolean getSelected()
+    public GreenfootImage getCardImage()
+    {
+        return cardImage;
+    }
+    public GreenfootImage getSelectedCardImage()
+    {
+        return selectedCardImage;
+    }
+    public boolean getIsSelected()
     {
         return isSelected;
     }
-    public void setSelected(boolean selected)
+    public void setIsSelected(boolean selected)
     {
         isSelected = selected;
     }
