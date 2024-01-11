@@ -14,10 +14,13 @@ public class Scorekeeper
     {
         deckSize = input;
     }
+    
     public static void updateScore()
     {
-        score += (int) 1000 / (System.currentTimeMillis() - startTime);
+        score = 30 - (System.currentTimeMillis() - startTime) / 1000 > 5 ? (int) (30 - (System.currentTimeMillis() - startTime) / 1000) : 5;
+        startTime = System.currentTimeMillis();
     }
+    
     public static int getScore()
     {
         return score;
