@@ -14,6 +14,9 @@ public class GameBoard extends World
     {   
         super(430, 600, 1, false); 
         new Tester("Scorekeeper");
+        
+        Dealer dealer = new Dealer(27);
+        addObject(dealer, 0, 0);
     }
 
 
