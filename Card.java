@@ -43,14 +43,17 @@ public class Card extends Actor
     {
         return shape;
     }
+    
     public Color getColor()
     {
         return color;
     }
+    
     public int getNumberOfShapes()
     {
         return numberOfShapes;
     }
+    
     public int getShading()
     {
         return shading;
@@ -59,14 +62,17 @@ public class Card extends Actor
     {
         return cardImage;
     }
+    
     public GreenfootImage getSelectedCardImage()
     {
         return selectedCardImage;
     }
+    
     public boolean getIsSelected()
     {
         return isSelected;
     }
+    
     public void setIsSelected(boolean selected)
     {
         isSelected = selected;

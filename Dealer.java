@@ -39,12 +39,20 @@ public class Dealer extends Actor
     {
         Greenfoot.playSound("shuffle.wav");
         
-        getWorld().addObject(deck.getRandomCard(), 100, 100);
+        for(int i = 0; i < 3; i++)
+        {
+            for(int u = 0; u < 4; u++)
+            {
+                getWorld().addObject(deck.getTopCard(), i * 140 + 75, u * 100 + 80);
+            }
+        }
     }
     
     public void setUI()
     {
+        getWorld().showText(" " + deck.getNumCardsInDeck(), 300, 470);
         
+        getWorld().showText("" + Scorekeeper.getScore(), 300, 505);
     }
     
     public void endGame()
