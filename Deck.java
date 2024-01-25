@@ -2,31 +2,15 @@ import greenfoot.*;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Deck here.
+ * Create and shuffles the deck of Cards 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Seamus
+ * @version 25/1/24
  */
 
 
 public class Deck 
 {
-    /*private Card[] unshuffledDeck;
-    
-    public Deck(int numOfCardsCreated)
-    {
-        unshuffledDeck = new Card[numOfCardsCreated + 1];
-        populateunshuffledDeckWithCards(numOfCardsCreated);
-    }
-    
-    
-    public Card getRandomCard()
-    {
-        return unshuffledDeck[(int) (Math.random() * unshuffledDeck.length)];
-    }*/
-    
-    
-    
     
     private Card[] unshuffledDeck;
     private ArrayList<Card> shuffledDeck;
@@ -49,20 +33,21 @@ public class Deck
     //getTopCard returns the top card of the deck as the cards are dealt.
     protected Card getTopCard()
     {
-        Card topCard = shuffledDeck.get(0);
-        shuffledDeck.remove(0);
-        return topCard;
+        return shuffledDeck.remove(0);
     }
+    
     //getShuffledCard returns a card at a specific location in the deck.
     protected Card getShuffledCard(int selectedCard)
     {
         return shuffledDeck.get(selectedCard);
     }
+    
     //getShuffledDeck returns the entire shuffled deck.
     protected ArrayList getShuffledDeck()
     {
         return shuffledDeck;
     }
+    
     //limitNumCardsInDeck forces the number of cards in the unshuffled deck to either be 27 (3 set of 3 characteristics of triples) or 81(3 set of 4 characteristics of triples). 
     protected int limitNumCardsInDeck(int input)
     {

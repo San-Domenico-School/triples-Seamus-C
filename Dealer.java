@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class Dealer here.
+ * get card and put them on the game board 
  * 
  * @author Seamus
- * @version 1/18/24
+ * @version 18/1/24
  */
 public class Dealer extends Actor
 {
