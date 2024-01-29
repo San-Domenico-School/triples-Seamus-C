@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Game Board for Triples
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Seamus
+ * @version 26/1/24
  */
 
 public class Card extends Actor
@@ -58,6 +58,7 @@ public class Card extends Actor
     {
         return shading;
     }
+    
     public GreenfootImage getCardImage()
     {
         return cardImage;
