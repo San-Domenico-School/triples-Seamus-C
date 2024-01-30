@@ -73,10 +73,10 @@ public class Player extends Actor
     
     private void resetCardsSelected()
     {
-        for (int i = 0; i < cardSelected.length; i++)
+        for (int i = 0; i < cardsOnBoard.size(); i++)
         {
             //needs to be changed
-            Card currentCard = selectedCardIndex.get(i);
+            Card currentCard = cardsOnBoard.get(i);
             
             currentCard.setImage(currentCard.getCardImage());
             currentCard.setIsSelected(false);
