@@ -90,9 +90,18 @@ public class Dealer extends Actor
         
         for(Card card : cardsSelected)
         {
+            int x = card.getX();
+            int y = card.getY();
+            
             getWorld().removeObject(card);
             cardsOnBoard.remove(card);
-            cardsOnBoard.add(deck.getTopCard());
+
+            Card cardAdded = deck.getTopCard();
+            if(!(cardAdded == null))
+            {
+                cardsOnBoard.add(cardAdded);
+                getWorld().addObject(cardAdded, x, y);
+            }
         }
         
         triplesRemaining--;

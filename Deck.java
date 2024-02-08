@@ -33,7 +33,14 @@ public class Deck
     //getTopCard returns the top card of the deck as the cards are dealt.
     protected Card getTopCard()
     {
-        return shuffledDeck.remove(0);
+        if(shuffledDeck.size() > 0)
+        {
+            return shuffledDeck.remove(0);
+        }
+        else
+        {
+            return null;
+        }
     }
     
     //getShuffledCard returns a card at a specific location in the deck.
