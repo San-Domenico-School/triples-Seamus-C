@@ -51,27 +51,60 @@ public class Dealer extends Actor
     public void setUI()
     {
         getWorld().showText(" " + deck.getNumCardsInDeck(), 300, 470);
-        
         getWorld().showText("" + Scorekeeper.getScore(), 300, 505);
     }
     
     public void endGame()
     {
-        
+        if(triplesRemaining == 0)
+        {
+            Greenfoot.stop();
+        }
     }
     
     public void checkIfTriple()
     {
+        Card card0 = cardsSelected[0];
+        Card card1 = cardsSelected[1];
+        Card card2 = cardsSelected[2];
         
+        //add veriable being checked and mod 3 == 0 
+        boolean cardSides = (card0.getNumberOfShapes() + card1.getNumberOfShapes() + card2.getNumberOfShapes()) % 3 == 0;
+        boolean cardShading = (card0.getShading() + card1.getShading() + card2.getShading()) % 3 == 0;
+        boolean cardColor = (card0.getColor().ordinal() + card1.getColor().ordinal() + card2.getColor().ordinal()) % 3 == 0;
+        boolean cardShape = (card0.getShape().ordinal() + card1.getShape().ordinal() + card2.getShape().ordinal()) % 3 == 0;
+    
+        if(cardSides && cardShading && cardColor && cardShape)
+        {
+            actionIfTriple();
+        }
+        else
+        {
+            Animations.wobble(cardsSelected);
+        }
     }
     
     public void actionIfTriple()
     {
+        Animations.slideAndTurn(cardsSelected);
         
+        for(Card card : cardsSelected)
+        {
+            getWorld().removeObject(card);
+            cardsOnBoard.remove(card);
+            cardsOnBoard.add(deck.getTopCard());
+        }
+        
+        triplesRemaining--;
+        Scorekeeper.updateScore();
+        setUI();
+        endGame();
     }
     
     public void setCardsSelected(ArrayList <Card> cards, ArrayList <Integer> ints, Card[] cardArray)
     {
-        
+        cardsOnBoard = cards;
+        selectedCardsIndex = ints;
+        cardsSelected = cardArray;
     }
 }

@@ -86,9 +86,9 @@ public class Player extends Actor
     
     private boolean setCardsSelected()
     {
-        if(selectedCardIndex.size() >= 3)
+        if(selectedCardIndex.size() == 3)
         {
-            for (int i =0; i < selectedCardIndex.size(); i++)
+            for (int i = 0; i < selectedCardIndex.size(); i++)
             {
                 cardSelected[i] = cardsOnBoard.get(selectedCardIndex.get(i));
             }
