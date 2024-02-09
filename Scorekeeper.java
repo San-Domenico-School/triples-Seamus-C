@@ -17,7 +17,7 @@ public class Scorekeeper
     
     public static void updateScore()
     {
-        score = 35 - (System.currentTimeMillis() - startTime) / 1000 > 5 ? (int) (30 - (System.currentTimeMillis() - startTime) / 1000) : 5;
+        score += 35 - (System.currentTimeMillis() - startTime) / 1000 > 5 ? (int) (30 - (System.currentTimeMillis() - startTime) / 1000) : 5;
         startTime = System.currentTimeMillis();
     }
     

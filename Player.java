@@ -51,7 +51,7 @@ public class Player extends Actor
         {
             Card currentCard = cardsOnBoard.get(i);
             
-            if(Greenfoot.mouseClicked(cardsOnBoard.get(i)))
+            if(Greenfoot.mouseClicked(currentCard))
             {
                 if(currentCard.getIsSelected())
                 {

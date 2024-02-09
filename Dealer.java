@@ -97,7 +97,7 @@ public class Dealer extends Actor
             cardsOnBoard.remove(card);
 
             Card cardAdded = deck.getTopCard();
-            if(!(cardAdded == null))
+            if(cardAdded != null)
             {
                 cardsOnBoard.add(cardAdded);
                 getWorld().addObject(cardAdded, x, y);
